@@ -1,0 +1,111 @@
+:root {
+  /* Breakpoints */
+  --xs-bp: 16.667rem;
+  --s-bp: 22.197rem;
+  --m-bp: 31.250rem;
+  --l-bp: 41.667rem;
+  --xl-bp: 50.00rem;
+  /*
+    Colors
+  */
+  --white: #FFFFFF;
+  --black: #494846;
+  --primary: #21366C;
+  --secondary: #C09552;
+  --muted-white: #F7F7F7;
+  --muted-secondary: #664925;
+
+  /* Typography */
+  --base: 20px;
+  --line: 1.8;
+  --font-stack: "Oxygen",
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Oxygen-Sans,
+                Ubuntu,
+                Cantarell,
+                "Helvetica Neue",
+                sans-serif;
+
+  --w-one: 100vw;
+  --w-two: 90vw;
+  --w-three: 85vw;
+  --w-four: 75vw;
+  --w-five: 65vw;
+  /*
+    Extendable classes
+  */
+  --center: {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  };
+
+  --full-width: {
+    width: 100%;
+    height: auto;
+  };
+}
+/* Custom Media Queries */
+@custom-media --xs-viewport (min-width: 16.667rem);
+@custom-media --s-viewport (min-width: 22.197rem);
+@custom-media --m-viewport (min-width: 31.250rem);
+@custom-media --l-viewport (min-width: 41.667rem);
+@custom-media --xl-viewport (min-width: 50.00rem);
+
+
+/*
+  Reset
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-stack);
+  font-size: var(--base);
+  line-height: var(--line);
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: .8rem; }
+
+strong { font-style: oblique; }
+em { font-style: italic; }
+
+/* default link styles */
+a {
+  text-decoration: none;
+  border-bottom: solid 2px var(--secondary);
+  transition: all .5s ease;
+}
+a:visited,
+a:active,
+a:focus {
+  transition: all .5s ease;
+  border-bottom: solid 2px var(--muted-secondary);
+}
+a:hover {
+  transition: all .5s ease;
+  border-bottom: solid 2px var(--primary);
+}
+/* User selected text color */
+::-moz-selection {
+  background-color: var(--muted-secondary);
+  color: var(--white);
+}
+::selection{
+  background-color: var(--muted-secondary);
+  color: var(--white);
+}
