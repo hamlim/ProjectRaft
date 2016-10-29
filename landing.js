@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Landing } from '/src/js/landing';
-var css = require('./src/css/main.css');
+import { Page } from './src/js/landing';
+var maincss = require('./src/css/main.css');
+var landingcss = require('./src/css/landing.css');
 
 if (document.getElementById('reactMount')) {
-  ReactDOM.render(<Landing />, document.getElementById('reactMount'));
+  ReactDOM.render(<Page redactedCompany={"company_name_here"} />, document.getElementById('reactMount'));
 }

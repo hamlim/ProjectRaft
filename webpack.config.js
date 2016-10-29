@@ -8,7 +8,10 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	entry: {
-		landing: './app.js'
+		landing: './landing.js',
+		workboats: './workboats.js',
+		yachts: './yachts.js',
+		contact: './contact.js'
 	},
 	output: {
 		path: __dirname + '/dist',
@@ -33,7 +36,11 @@ module.exports = {
 			{
         test:   /\.css$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader")
-      }
+      },
+			{
+				test: /\.jpg$/,
+				loader: "file-loader"
+			}
 		]
 	},
   postcss: function () {

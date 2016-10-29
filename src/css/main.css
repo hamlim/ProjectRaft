@@ -16,7 +16,7 @@
   --muted-secondary: #664925;
 
   /* Typography */
-  --base: 20px;
+  --base: 16px;
   --line: 1.8;
   --font-stack: "Oxygen",
                 -apple-system,
@@ -47,6 +47,9 @@
     width: 100%;
     height: auto;
   };
+  --yell {
+    font-size: 2rem;
+  };
 }
 /* Custom Media Queries */
 @custom-media --xs-viewport (min-width: 16.667rem);
@@ -68,16 +71,17 @@
 }
 
 html {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
   font-family: var(--font-stack);
   font-size: var(--base);
   line-height: var(--line);
 }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
+
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.1rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: .8rem; }
 
@@ -85,18 +89,19 @@ strong { font-style: oblique; }
 em { font-style: italic; }
 
 /* default link styles */
-a {
+[class="a"] {
   text-decoration: none;
+  color: var(--black);
   border-bottom: solid 2px var(--secondary);
   transition: all .5s ease;
 }
-a:visited,
-a:active,
-a:focus {
+[class="a"]:visited,
+[class="a"]:active,
+[class="a"]:focus {
   transition: all .5s ease;
   border-bottom: solid 2px var(--muted-secondary);
 }
-a:hover {
+[class="a"]:hover {
   transition: all .5s ease;
   border-bottom: solid 2px var(--primary);
 }
@@ -109,3 +114,80 @@ a:hover {
   background-color: var(--muted-secondary);
   color: var(--white);
 }
+
+
+
+[class="header"] {
+  background-color: var(--muted-white);
+  height: 5rem;
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+  [class="header_title"] {
+    background-color: var(--primary);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5em;
+    transition: all .5s ease;
+  }
+    [class="header_title"]:hover {
+      transition: all .5s ease;
+      background-color: var(--secondary);
+    }
+    [class="header_title_logo"] {
+      display: flex;
+      text-decoration: none;
+    }
+      [class="header_title_logo_img"] {
+        align-self: center;
+      }
+
+  [class="nav"] {
+
+  }
+    [class="nav_header"] {
+      display: inline-block;
+    }
+    [class="nav_link"] {
+      text-decoration: none;
+      color: var(--black);
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      padding: 0 .5em;
+    }
+      [class="nav_link"]:hover {
+        background-color: color(var(--muted-white) lightness(- 10%));
+      }
+
+[class="lead"] {
+  height: calc(90vh - 5rem);
+  width: 100vw;
+  position: relative;
+  background: url('/assets/water.jpeg') no-repeat var(--primary) center / cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+  [class="lead"]::after {
+    background-color: var(--white);
+    content: '';
+    position: absolute;
+    left: 45vw;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    transform: skewX(-30deg);
+  }
+  [class="lead_title"],
+  [class="lead_subtitle"] {
+    z-index: 1;
+    max-width: 35vw;
+    margin-right: 4rem;
+    @apply --yell;
+  }

@@ -3,16 +3,20 @@ import React from 'react';
 export const Header = (props) => {
   return (
     <header className="header">
-      <h1>
-        <a href="/" className="logo">
-          <img src="./assets/logo.png" className="logo_img">
+      <div className="header header--top">
+        <a href="/" className="header_title">
+          <h1 className="header_title_logo">
+            <img src="./assets/logo.png" className="header_title_logo_img" alt="Redacted company logo" />
+          </h1>
         </a>
-      </h2>
-      <nav className="nav">
-        <h2><a href="./work-boats" className={"nav_link" + (props.workboats ? "nav_link--active" : "")}>Work Boats</a></h2>
-        <h2><a href="./yachts" className={"nav_link" + (props.yachts ? "nav_link--active" : "")}>Yachts</a></h2>
-        <h2><a href="./contact-us" className={"nav_link" + (props.contact ? "nav_link--active" : "")}>Contact Us</a></h2>
-      </nav>
+      </div>
+      <div className="header header--bottom">
+        <nav className="nav">
+          <h3 className="nav_header"><a href="./work-boats" className={"nav_link" + (props.workboats ? "nav_link--active" : "")}>Work Boats</a></h3>
+          <h3 className="nav_header"><a href="./yachts" className={"nav_link" + (props.yachts ? "nav_link--active" : "")}>Yachts</a></h3>
+          <h3 className="nav_header"><a href="./contact-us" className={"nav_link" + (props.contact ? "nav_link--active" : "")}>Contact Us</a></h3>
+        </nav>
+      </div>
     </header>
   )
 };

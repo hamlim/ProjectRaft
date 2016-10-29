@@ -1,15 +1,22 @@
 import React from 'react';
 import { Header, Lead, Footer } from './base-components';
 
-export default const Page = (props) => {
+const About = (props) => {
+  return (
+    <p>Hello World!</p>
+  )
+};
+
+
+export const Page = (props) => {
   return (
     <section className="landing">
       <Header />
       <Lead>
-        <h3 className="lead_title">Custom Design, Engineering, Fabrication, and Service</h3>
+        <h2 className="lead_title">Custom Design, Engineering, Fabrication, and Service</h2>
       </Lead>
       <About />
-      <Footer />
+      <Footer redactedCompany={props.redactedCompany} />
     </section>
   )
 };
