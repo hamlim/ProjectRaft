@@ -36,7 +36,7 @@ html {
                 Cantarell,
                 "Helvetica Neue",
                 sans-serif;
-  font-size: 16px;
+  font-size: calc(.5rem + 1vmin);
   line-height: 1.8;
 }
 
@@ -82,16 +82,16 @@ em { font-style: italic; }
 
 
 
-[class="header"] {
+[class="header_parent"] {
   background-color: #F7F7F7;
-  height: 80px;
-  height: 5rem;
+  height: 96px;
+  height: 6rem;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -99,39 +99,52 @@ em { font-style: italic; }
       -ms-flex-align: center;
           align-items: center;
 }
-  [class="header_title"] {
-    background-color: #21366C;
-    height: 80px;
-    height: 5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0 1.5em;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+  [class="header"] {
+    height: 48px;
+    height: 3rem;
+    width: 100vw;
   }
-    [class="header_title"]:hover {
-      -webkit-transition: all .5s ease;
-      transition: all .5s ease;
-      background-color: #C09552;
-    }
-    [class="header_title_logo"] {
+    [class="header_title"] {
+      background-color: #21366C;
+      height: 100%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      text-decoration: none;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 0 1.5em;
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease;
     }
-      [class="header_title_logo_img"] {
-        -ms-flex-item-align: center;
-            -ms-grid-row-align: center;
-            align-self: center;
+      [class="header_title"]:hover {
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+        background-color: #C09552;
       }
+      [class="header_title_logo"] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        text-decoration: none;
+      }
+        [class="header_title_logo_img"] {
+          -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+              align-self: center;
+        }
 
   [class="nav"] {
-
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 48px;
+    height: 3rem;
   }
     [class="nav_header"] {
       display: inline-block;
@@ -139,8 +152,6 @@ em { font-style: italic; }
     [class="nav_link"] {
       text-decoration: none;
       color: #494846;
-      height: 32px;
-      height: 2rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -153,48 +164,76 @@ em { font-style: italic; }
         background-color: rgb(222, 222, 222);
       }
 
+  @media (min-width: 31.250rem) {
+    [class="header_parent"] {
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+    }
+    [class="header"] {
+      width: auto;
+      width: initial;
+      height: 6rem;
+    }
+    [class="nav"] {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+  }
+
 [class="lead"] {
-  height: calc(90vh - 5rem);
+  height: 40vh;
   width: 100vw;
   position: relative;
-  background: url('/assets/water.jpeg') no-repeat #21366C center / cover;
+  background: #21366C;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-  [class="lead"]::after {
-    background-color: #F7F7F7;
-    opacity: .6;
-    content: '';
-    position: absolute;
-    left: 45vw;
-    top: 0;
-    bottom: 0;
-    width: 100vw;
-    -webkit-transform: skewX(-30deg);
-            transform: skewX(-30deg);
-  }
   [class="lead_title"],
   [class="lead_subtitle"] {
     z-index: 1;
     background-color: #FFFFFF;
     padding: 1em;
-    max-width: 35vw;
-    margin-right: 64px;
-    margin-right: 4rem;
-    font-size: 32px;
-    font-size: 2rem;
+    font-size: 28.8px;
+    font-size: 1.8rem;
     -webkit-animation: fade-up 1.5s cubic-bezier(0.42, 0, 1, 1.02);
             animation: fade-up 1.5s cubic-bezier(0.42, 0, 1, 1.02);
   }
 
+  @media (min-width: 31.250rem) {
+    [class="lead"] {
+      height: calc(90vh - 5rem);
+      background: url('/assets/water.jpeg') no-repeat #21366C center / cover;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+    [class="lead"]::after {
+      background-color: #F7F7F7;
+      opacity: .6;
+      content: '';
+      position: absolute;
+      left: 45vw;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      -webkit-transform: skewX(-30deg);
+              transform: skewX(-30deg);
+    }
+    [class="lead_title"],
+    [class="lead_subtitle"] {
+      max-width: 35vw;
+      margin-right: 4rem;
+    }
+  }
 
 
 
@@ -213,7 +252,6 @@ em { font-style: italic; }
             transform: translateY(0);
   }
 }
-
 
 
 

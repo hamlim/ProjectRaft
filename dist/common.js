@@ -21480,10 +21480,10 @@
 	var Header = exports.Header = function Header(props) {
 	  return _react2.default.createElement(
 	    "header",
-	    { className: "header" },
+	    { className: "header_parent" },
 	    _react2.default.createElement(
 	      "div",
-	      { className: "header header--top" },
+	      { className: "header" },
 	      _react2.default.createElement(
 	        "a",
 	        { href: "/", className: "header_title" },
@@ -21495,37 +21495,33 @@
 	      )
 	    ),
 	    _react2.default.createElement(
-	      "div",
-	      { className: "header header--bottom" },
+	      "nav",
+	      { className: "nav" },
 	      _react2.default.createElement(
-	        "nav",
-	        { className: "nav" },
+	        "h3",
+	        { className: "nav_header" },
 	        _react2.default.createElement(
-	          "h3",
-	          { className: "nav_header" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "./work-boats", className: "nav_link" + (props.workboats ? "nav_link--active" : "") },
-	            "Work Boats"
-	          )
-	        ),
+	          "a",
+	          { href: "./work-boats", className: "nav_link" + (props.workboats ? "nav_link--active" : "") },
+	          "Work Boats"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "h3",
+	        { className: "nav_header" },
 	        _react2.default.createElement(
-	          "h3",
-	          { className: "nav_header" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "./yachts", className: "nav_link" + (props.yachts ? "nav_link--active" : "") },
-	            "Yachts"
-	          )
-	        ),
+	          "a",
+	          { href: "./yachts", className: "nav_link" + (props.yachts ? "nav_link--active" : "") },
+	          "Yachts"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "h3",
+	        { className: "nav_header" },
 	        _react2.default.createElement(
-	          "h3",
-	          { className: "nav_header" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "./contact-us", className: "nav_link" + (props.contact ? "nav_link--active" : "") },
-	            "Contact Us"
-	          )
+	          "a",
+	          { href: "./contact-us", className: "nav_link" + (props.contact ? "nav_link--active" : "") },
+	          "Contact Us"
 	        )
 	      )
 	    )

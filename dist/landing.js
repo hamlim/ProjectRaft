@@ -45,7 +45,11 @@ webpackJsonp([1],{
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var About = function About(props) {
-	  return _react2.default.createElement('section', { className: 'about' });
+	  return _react2.default.createElement(
+	    'section',
+	    { className: 'about' },
+	    'Hello World'
+	  );
 	};
 	
 	var Page = exports.Page = function Page(props) {

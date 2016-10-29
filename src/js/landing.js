@@ -4,7 +4,7 @@ import { Header, Lead, Footer } from './base-components';
 const About = (props) => {
   return (
     <section className="about">
-      
+      Hello World
     </section>
   )
 };
